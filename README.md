@@ -25,6 +25,7 @@ We identify this pattern as the **Unverified Context Vulnerability**: when safet
 ---
 
 ## 📊 Repository Structure
+context-paradox-paper/ ├── paper/ │ ├── main.tex # Main LaTeX source (Revised) │ ├── references.bib # Bibliography │ └── figures/ │ └── graph.png # Publication-ready scatter plot ├── results/ │ ├── aggregated_all_runs.csv # Definitive dataset (642 observations) │ └── plot_data.csv # Processed data for visualization ├── code/ │ ├── merge_and_aggregate_fixed.py # Data aggregation script │ └── plot_divergence_fixed_final.py # Chart generation script └── README.md # This file
 
 
 🧪 Key Findings at a Glance
@@ -59,3 +60,93 @@ Core Recommendation: Safety architects must recognize that more context does not
     Default to Isolated for anonymous/unverified users.
     Escalate to Hybrid only for authenticated professionals.
     Maintain Content Fallback even when context is trusted.
+
+    🚀 Reproducing the Results
+Prerequisites
+
+pip install pandas matplotlib numpy
+
+Step 1: Generate Aggregated Data
+
+python code/merge_and_aggregate_fixed.py
+
+This produces results/aggregated_all_runs.csv.
+Step 2: Generate Divergence Chart
+
+python code/plot_divergence_fixed_final.py
+
+This produces results/graph.png (or .pdf).
+Step 3: Compile the Paper
+
+Open paper/main.tex in Overleaf or your local LaTeX distribution and compile with pdfLaTeX.
+📖 Citation
+BibTeX
+
+@misc{anonymous2026contextparadox,
+  title={The Context Paradox: How Safety Architecture Choices Trade Intent Detection Against Social Engineering Vulnerabilities},
+  author={Anonymous},
+  year={2026},
+  note={Preprint. Available at https://arxiv.org/[insert-id]},
+  url={https://github.com/[your-username]/context-paradox-paper}
+}
+
+Plain Text
+
+Anonymous. (2026). The Context Paradox: How Safety Architecture Choices Trade Intent Detection Against Social Engineering Vulnerabilities. Preprint.
+⚠️ Responsible Disclosure
+
+This paper identifies a vulnerability in context-aware safety systems. The specific attack vectors described (persona hijacking, professional framing exploits) are well-known in adversarial ML literature. We do not provide novel jailbreak instructions. Our contribution is the empirical demonstration that unverified context is a structural vulnerability, not a fixable bug, and the architectural solution (Dynamic Trust Model) to mitigate it.
+📬 Contact
+
+For questions, reproductions, or collaboration inquiries:
+📧 🚀 Reproducing the Results
+Prerequisites
+
+pip install pandas matplotlib numpy
+
+Step 1: Generate Aggregated Data
+
+python code/merge_and_aggregate_fixed.py
+
+This produces results/aggregated_all_runs.csv.
+Step 2: Generate Divergence Chart
+
+python code/plot_divergence_fixed_final.py
+
+This produces results/graph.png (or .pdf).
+Step 3: Compile the Paper
+
+Open paper/main.tex in Overleaf or your local LaTeX distribution and compile with pdfLaTeX.
+📖 Citation
+BibTeX
+
+@misc{anonymous2026contextparadox,
+  title={The Context Paradox: How Safety Architecture Choices Trade Intent Detection Against Social Engineering Vulnerabilities},
+  author={Anonymous},
+  year={2026},
+  note={Preprint. Available at https://arxiv.org/[insert-id]},
+  url={https://github.com/[your-username]/context-paradox-paper}
+}
+
+Plain Text
+
+Anonymous. (2026). The Context Paradox: How Safety Architecture Choices Trade Intent Detection Against Social Engineering Vulnerabilities. Preprint.
+⚠️ Responsible Disclosure
+
+This paper identifies a vulnerability in context-aware safety systems. The specific attack vectors described (persona hijacking, professional framing exploits) are well-known in adversarial ML literature. We do not provide novel jailbreak instructions. Our contribution is the empirical demonstration that unverified context is a structural vulnerability, not a fixable bug, and the architectural solution (Dynamic Trust Model) to mitigate it.
+📬 Contact
+
+For questions, reproductions, or collaboration inquiries:
+📧 ViraListen@proton.me
+📜 License
+
+    Paper Text: CC-BY-SA 4.0
+    Code & Data: MIT
+
+© 2026 Ian Kubath. All rights reserved.
+📜 License
+
+    Paper Text: CC-BY-SA 4.0
+    Code & Data: MIT
+
+© 2026 Anonymous Author(s). All rights reserved.
