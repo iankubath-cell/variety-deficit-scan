@@ -21,7 +21,7 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 # Models Configuration
 MODELS = [
-    {
+   # {
         "name": "Claude_3.5_Sonnet", 
         "id": "claude-3-5-sonnet-20241022",
         "type": "anthropic",
