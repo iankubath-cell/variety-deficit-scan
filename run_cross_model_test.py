@@ -22,11 +22,11 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 # Models Configuration
 MODELS = [
    # {
-        "name": "Claude_3.5_Sonnet", 
-        "id": "claude-3-5-sonnet-20241022",
-        "type": "anthropic",
-        "cost_per_1m_tokens": 3.0 # Approx Anthropic pricing
-    },
+   #     "name": "Claude_3.5_Sonnet", 
+   #     "id": "claude-3-5-sonnet-20241022",
+   #     "type": "anthropic",
+   #     "cost_per_1m_tokens": 3.0 # Approx Anthropic pricing
+   # },
     {
         "name": "Llama_3.1", 
         "id": LLAMA_MODEL_NAME,
