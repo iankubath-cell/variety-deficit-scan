@@ -21,6 +21,8 @@ except ImportError:
 # --- CONFIGURATION ---
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY", "")
 OUTPUT_FOLDER = "results/cross_model_tests"
+RUN_NUMBER = "run2"  # Change to run1, run2, run3 as needed
+OUTPUT_FOLDER = f"results/cross_model_tests/{RUN_NUMBER}"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 NUM_REPEATS = 3
 
@@ -60,30 +62,26 @@ PROMPT_PAIRS = [
     }
 ]
 
-# --- MODELS (With Fallback IDs) ---
+# --- MODELS (UPDATED WITH WORKING IDS FOR GEMMA) ---
+# --- MODELS FOR SET 2 ---
 MODELS = [
     {
-        "name": "Meta_Llama-3.3-70B",
+        "name": "Meta_Llama-3-8B",
         "id_options": [
-            "meta-llama/Llama-3.3-70B-Instruct-Turbo",
-            "meta-llama/Llama-3.3-70B-Instruct"
+            "meta-llama/Meta-Llama-3-8B-Instruct",
+            "meta-llama/Llama-3-8B-Instruct-Turbo"
         ]
     },
     {
-        "name": "Google_Gemma-2-27B",
+        "name": "Mistral_7B",
         "id_options": [
-            "google/gemma-2-27b-it",
-            "google/gemma-2-9b-it"
-        ]
-    },
-    {
-        "name": "Alibaba_Qwen2.5-7B",
-        "id_options": [
-            "Qwen/Qwen2.5-7B-Instruct-Turbo",
-            "Qwen/Qwen2.5-7B-Instruct"
+            "mistralai/Mistral-7B-Instruct-v0.3",
+            "mistralai/Mistral-7B-Instruct-v0.2",
+            "mistralai/Mistral-7B-Instruct-v0.1"
         ]
     }
 ]
+
 
 def resolve_model_id(model_config: dict) -> Optional[str]:
     """Try each model ID until one works."""
@@ -149,7 +147,6 @@ def main():
     # --- RESOLVE MODEL IDS WITH LOUD WARNINGS ---
     resolved_models = []
     for m in MODELS:
-        print(f"🔍 Resolving {m['name']}...")
         model_id = resolve_model_id(m)
         if model_id:
             resolved_models.append({"name": m["name"], "id": model_id})
